@@ -73,7 +73,7 @@ class OtpScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     // Field 1
                     SizedBox(
@@ -87,7 +87,7 @@ class OtpScreen extends StatelessWidget {
                         keyboardType: TextInputType.numberWithOptions(),
                         decoration: InputDecoration(
                           filled: true,
-                          fillColor: Colors.grey[300],
+                          fillColor: Colors.grey[200],
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                             borderSide: BorderSide(color: Colors.transparent),
@@ -108,7 +108,7 @@ class OtpScreen extends StatelessWidget {
                         keyboardType: TextInputType.numberWithOptions(),
                         decoration: InputDecoration(
                           filled: true,
-                          fillColor: Colors.grey[300],
+                          fillColor: Colors.grey[200],
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                             borderSide: BorderSide(color: Colors.transparent),
@@ -130,7 +130,7 @@ class OtpScreen extends StatelessWidget {
                         keyboardType: TextInputType.numberWithOptions(),
                         decoration: InputDecoration(
                           filled: true,
-                          fillColor: Colors.grey[300],
+                          fillColor: Colors.grey[200],
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                             borderSide: BorderSide(color: Colors.transparent),
@@ -151,7 +151,7 @@ class OtpScreen extends StatelessWidget {
                         keyboardType: TextInputType.numberWithOptions(),
                         decoration: InputDecoration(
                           filled: true,
-                          fillColor: Colors.grey[300],
+                          fillColor: Colors.grey[200],
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                             borderSide: BorderSide(color: Colors.transparent),
@@ -172,7 +172,7 @@ class OtpScreen extends StatelessWidget {
                         keyboardType: TextInputType.numberWithOptions(),
                         decoration: InputDecoration(
                           filled: true,
-                          fillColor: Colors.grey[300],
+                          fillColor: Colors.grey[200],
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                             borderSide: BorderSide(color: Colors.transparent),
@@ -193,7 +193,7 @@ class OtpScreen extends StatelessWidget {
                         keyboardType: TextInputType.numberWithOptions(),
                         decoration: InputDecoration(
                           filled: true,
-                          fillColor: Colors.grey[300],
+                          fillColor: Colors.grey[200],
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
                             borderSide: BorderSide(color: Colors.transparent),
