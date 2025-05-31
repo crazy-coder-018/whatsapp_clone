@@ -1,12 +1,15 @@
 // ignore_for_file: unused_field, use_key_in_widget_constructors, must_be_immutable, prefer_final_fields
 
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/screens/OTP/otp_screen.dart';
 import 'package:whatsapp_clone/widgets/ui_helper.dart';
 
 class LoginPage extends StatefulWidget {
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
+
+TextEditingController phone_Controller = TextEditingController();
 
 class _LoginPageState extends State<LoginPage> {
   String _selectedCountry = 'Pakistan';
@@ -23,6 +26,30 @@ class _LoginPageState extends State<LoginPage> {
     "Amarica",
   ];
 
+  login(String phone_number) {
+    if (phone_number == "") {
+      return ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Center(
+            child: Text(
+              'Enter you\'r Phone Number',
+              style: TextStyle(color: Colors.red),
+            ),
+          ),
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          duration: Duration(seconds: 5),
+        ),
+      );
+    } else {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => OtpScreen()),
+      );
+    }
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,7 +63,7 @@ class _LoginPageState extends State<LoginPage> {
 
               // Main Heading (Enter your phone number)
               UiHelper.CustomText(
-                text: 'Enter your phone number',
+                text: 'Enter you\'re phone number',
                 height: 18,
                 fontFamily: 'Poppins-Bold',
                 color: Color(0xFF00A884),
@@ -144,10 +171,11 @@ class _LoginPageState extends State<LoginPage> {
 
                   SizedBox(width: 12),
 
-                  // Number Enter Text
+                  // Number TextFeild
                   SizedBox(
                     width: 240,
                     child: TextField(
+                      controller: phone_Controller,
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         enabledBorder: UnderlineInputBorder(
@@ -166,7 +194,9 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
       floatingActionButton: UiHelper.CustomButton(
-        callBack: () {},
+        callBack: () {
+          login(phone_Controller.text.toString());
+        },
         buttonName: 'Next',
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
