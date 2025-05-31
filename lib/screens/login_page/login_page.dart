@@ -1,4 +1,4 @@
-// ignore_for_file: unused_field, use_key_in_widget_constructors, must_be_immutable, prefer_final_fields
+// ignore_for_file: unused_field, use_key_in_widget_constructors, must_be_immutable, prefer_final_fields, non_constant_identifier_names
 
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/screens/OTP/otp_screen.dart';
@@ -32,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
         SnackBar(
           content: Center(
             child: Text(
-              'Enter you\'r Phone Number',
+              'Enter you\'re Phone Number',
               style: TextStyle(color: Colors.red),
             ),
           ),
