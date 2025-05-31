@@ -86,21 +86,16 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           ],
         ),
       ),
-      floatingActionButton: SizedBox(
-        height: 80,
-        child: Center(
-          child: UiHelper.CustomButton(
-            callBack: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => LoginPage()),
-              );
-            },
-            buttonName: 'Agree and Continue',
-          ),
-        ),
+      floatingActionButton: UiHelper.CustomButton(
+        callBack: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => LoginPage()),
+          );
+        },
+        buttonName: 'Agree and Continue',
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }

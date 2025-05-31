@@ -84,16 +84,10 @@ class _LoginPageState extends State<LoginPage> {
                 child: DropdownButtonFormField(
                   decoration: InputDecoration(
                     enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0xFF00A884),
-                        width: 2,
-                      ),
+                      borderSide: BorderSide(color: Color(0xFF00A884)),
                     ),
                     focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0xFF00A884),
-                        width: 2,
-                      ),
+                      borderSide: BorderSide(color: Color(0xFF00A884)),
                     ),
                     hintText: 'Select you\'r Country',
                     hintStyle: TextStyle(
@@ -139,16 +133,10 @@ class _LoginPageState extends State<LoginPage> {
                           color: Colors.black,
                         ),
                         enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0xFF00A884),
-                            width: 2,
-                          ),
+                          borderSide: BorderSide(color: Color(0xFF00A884)),
                         ),
                         focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0xFF00A884),
-                            width: 2,
-                          ),
+                          borderSide: BorderSide(color: Color(0xFF00A884)),
                         ),
                       ),
                     ),
@@ -163,16 +151,10 @@ class _LoginPageState extends State<LoginPage> {
                       keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0xFF00A884),
-                            width: 2,
-                          ),
+                          borderSide: BorderSide(color: Color(0xFF00A884)),
                         ),
                         focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(
-                            color: Color(0xFF00A884),
-                            width: 2,
-                          ),
+                          borderSide: BorderSide(color: Color(0xFF00A884)),
                         ),
                       ),
                     ),
@@ -183,13 +165,11 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
       ),
-      floatingActionButton: SizedBox(
-        height: 80,
-        child: Center(
-          child: UiHelper.CustomButton(callBack: () {}, buttonName: 'Continue'),
-        ),
+      floatingActionButton: UiHelper.CustomButton(
+        callBack: () {},
+        buttonName: 'Next',
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
