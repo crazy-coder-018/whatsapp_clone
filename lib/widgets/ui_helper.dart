@@ -63,9 +63,13 @@ class UiHelper {
         borderRadius: BorderRadius.circular(10),
         color: Color(0xFFD9D9D9),
       ),
-      child: TextField(
-        controller: _controller,
-        decoration: InputDecoration(border: InputBorder.none),
+      child: Center(
+        child: TextField(
+          controller: _controller,
+          keyboardType: TextInputType.numberWithOptions(),
+          autofocus: true,
+          decoration: InputDecoration(border: InputBorder.none),
+        ),
       ),
     );
   }

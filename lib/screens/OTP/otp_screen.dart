@@ -87,16 +87,19 @@ class OtpScreen extends StatelessWidget {
               SizedBox(height: 24),
 
               // OTP code with 6 TextFields
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  UiHelper.CustomContainer(_otpController1),
-                  UiHelper.CustomContainer(_otpController2),
-                  UiHelper.CustomContainer(_otpController3),
-                  UiHelper.CustomContainer(_otpController4),
-                  UiHelper.CustomContainer(_otpController5),
-                  UiHelper.CustomContainer(_otpController6),
-                ],
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    UiHelper.CustomContainer(_otpController1),
+                    UiHelper.CustomContainer(_otpController2),
+                    UiHelper.CustomContainer(_otpController3),
+                    UiHelper.CustomContainer(_otpController4),
+                    UiHelper.CustomContainer(_otpController5),
+                    UiHelper.CustomContainer(_otpController6),
+                  ],
+                ),
               ),
 
               SizedBox(height: 40),
