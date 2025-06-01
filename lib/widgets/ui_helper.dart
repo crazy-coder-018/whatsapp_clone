@@ -61,7 +61,7 @@ class UiHelper {
       width: 40.0,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Color(0xFFD9D9D9),
+        color: Colors.grey.shade300,
       ),
       child: Center(
         child: TextField(
