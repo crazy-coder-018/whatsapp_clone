@@ -1,4 +1,4 @@
-// ignore_for_file: unused_field, use_key_in_widget_constructors, must_be_immutable, prefer_final_fields, non_constant_identifier_names
+// ignore_for_file: unused_field, use_key_in_widget_constructors, must_be_immutable, prefer_final_fields, non_constant_identifier_names, unrelated_type_equality_checks
 
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/screens/OTP/otp_screen.dart';
@@ -14,7 +14,7 @@ TextEditingController phone_Controller = TextEditingController();
 class _LoginPageState extends State<LoginPage> {
   String _selectedCountry = 'Pakistan';
 
-  List<String> _countries = [
+  List<String> countries = [
     "Pakistan",
     "Soudi Arabia",
     "Turky",
@@ -26,13 +26,13 @@ class _LoginPageState extends State<LoginPage> {
     "Amarica",
   ];
 
-  login(String phone_number) {
-    if (phone_number == "") {
+  login(String phone_number, countries) {
+    if (phone_number == "" || countries == "") {
       return ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Center(
             child: Text(
-              'Enter you\'re Phone Number',
+              'Please fill all the required fields',
               style: TextStyle(color: Colors.red),
             ),
           ),
@@ -129,7 +129,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ),
                   items:
-                      _countries.map((String country) {
+                      countries.map((String country) {
                         return DropdownMenuItem(
                           value: country,
                           child: Text(
@@ -200,7 +200,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
       floatingActionButton: UiHelper.CustomButton(
         callBack: () {
-          login(phone_Controller.text.toString());
+          login(phone_Controller.text.toString(), countries);
         },
         buttonName: 'Next',
       ),
