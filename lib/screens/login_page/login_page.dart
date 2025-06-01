@@ -44,7 +44,9 @@ class _LoginPageState extends State<LoginPage> {
     } else {
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => OtpScreen()),
+        MaterialPageRoute(
+          builder: (context) => OtpScreen(phoneNumber: phone_number),
+        ),
       );
     }
     setState(() {});

@@ -1,8 +1,12 @@
+// ignore_for_file: must_be_immutable, unnecessary_brace_in_string_interps
+
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/widgets/otp_code_boxes.dart';
 import 'package:whatsapp_clone/widgets/ui_helper.dart';
 
 class OtpScreen extends StatelessWidget {
-  const OtpScreen({super.key});
+  String phoneNumber;
+  OtpScreen({super.key, required this.phoneNumber});
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +35,7 @@ class OtpScreen extends StatelessWidget {
                 children: [
                   // Text 1
                   UiHelper.CustomText(
-                    text: 'You\'r tried to register +923554647172',
+                    text: 'You\'r tried to register +92${phoneNumber}',
                     height: 14,
                     fontFamily: 'Poppins-Semibold',
                   ),
@@ -56,11 +60,15 @@ class OtpScreen extends StatelessWidget {
                         height: 14,
                         fontFamily: 'Poppins-Semibold',
                       ),
-                      UiHelper.CustomText(
-                        text: 'Wrong Number ?',
-                        height: 14,
-                        fontFamily: 'Poppins-Bold',
-                        color: Color(0xFF00A884),
+                      // Wrong Number text button
+                      InkWell(
+                        onTap: () {},
+                        child: UiHelper.CustomText(
+                          text: 'Wrong Number ?',
+                          height: 14,
+                          fontFamily: 'Poppins-Bold',
+                          color: Color(0xFF00A884),
+                        ),
                       ),
                     ],
                   ),
@@ -70,144 +78,7 @@ class OtpScreen extends StatelessWidget {
               SizedBox(height: 24),
 
               // OTP code with 6 TextFields
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    // Field 1
-                    SizedBox(
-                      width: 40,
-                      height: 50,
-                      child: TextField(
-                        autofocus: true,
-                        cursorColor: Color(0xFF00A884),
-                        cursorHeight: 30,
-                        autocorrect: true,
-                        keyboardType: TextInputType.numberWithOptions(),
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.grey[200],
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(color: Colors.transparent),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(color: Color(0xFF00A884)),
-                          ),
-                        ),
-                      ),
-                    ),
-
-                    // Field 2
-                    SizedBox(
-                      width: 40,
-                      height: 50,
-                      child: TextField(
-                        keyboardType: TextInputType.numberWithOptions(),
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.grey[200],
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(color: Colors.transparent),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12),
-
-                            borderSide: BorderSide(color: Color(0xFF00A884)),
-                          ),
-                        ),
-                      ),
-                    ),
-
-                    // Field 3
-                    SizedBox(
-                      width: 40,
-                      height: 50,
-                      child: TextField(
-                        keyboardType: TextInputType.numberWithOptions(),
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.grey[200],
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(color: Colors.transparent),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(color: Color(0xFF00A884)),
-                          ),
-                        ),
-                      ),
-                    ),
-
-                    // Field 4
-                    SizedBox(
-                      width: 40,
-                      height: 50,
-                      child: TextField(
-                        keyboardType: TextInputType.numberWithOptions(),
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.grey[200],
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(color: Colors.transparent),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(color: Color(0xFF00A884)),
-                          ),
-                        ),
-                      ),
-                    ),
-
-                    // Field 5
-                    SizedBox(
-                      width: 40,
-                      height: 50,
-                      child: TextField(
-                        keyboardType: TextInputType.numberWithOptions(),
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.grey[200],
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(color: Colors.transparent),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(color: Color(0xFF00A884)),
-                          ),
-                        ),
-                      ),
-                    ),
-
-                    // Field 6
-                    SizedBox(
-                      width: 40,
-                      height: 50,
-                      child: TextField(
-                        keyboardType: TextInputType.numberWithOptions(),
-                        decoration: InputDecoration(
-                          filled: true,
-                          fillColor: Colors.grey[200],
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(color: Colors.transparent),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(color: Color(0xFF00A884)),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              OtpCodeBoxes(),
 
               SizedBox(height: 40),
 
