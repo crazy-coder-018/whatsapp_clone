@@ -96,11 +96,14 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(height: 1),
 
                   // Text 3
-                  UiHelper.CustomText(
-                    text: 'What\'s my number ?',
-                    height: 14,
-                    fontFamily: 'Poppins-Bold',
-                    color: Color(0xFF00A884),
+                  InkWell(
+                    onTap: () {},
+                    child: UiHelper.CustomText(
+                      text: 'What\'s my number ?',
+                      height: 14,
+                      fontFamily: 'Poppins-Bold',
+                      color: Color(0xFF00A884),
+                    ),
                   ),
                 ],
               ),

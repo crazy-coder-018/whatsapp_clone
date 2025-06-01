@@ -44,7 +44,7 @@ class OtpScreen extends StatelessWidget {
 
                   // Text 2
                   UiHelper.CustomText(
-                    text: 'recently. Wait before requesting as sms or a.',
+                    text: 'recently. Wait before requesting as sms or a',
                     height: 14,
                     fontFamily: 'Poppins-Semibold',
                   ),
@@ -62,7 +62,9 @@ class OtpScreen extends StatelessWidget {
                       ),
                       // Wrong Number text button
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
                         child: UiHelper.CustomText(
                           text: 'Wrong Number ?',
                           height: 14,
