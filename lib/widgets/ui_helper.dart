@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, no_leading_underscores_for_local_identifiers
 import 'package:flutter/material.dart';
 
 class UiHelper {
@@ -50,6 +50,22 @@ class UiHelper {
         fontWeight: fontWeight ?? FontWeight.normal,
         fontFamily: fontFamily,
         letterSpacing: letterSpacing,
+      ),
+    );
+  }
+
+  // Custom Container for OTP Sloda
+  static CustomContainer(TextEditingController _controller) {
+    return Container(
+      height: 40.0,
+      width: 40.0,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10),
+        color: Color(0xFFD9D9D9),
+      ),
+      child: TextField(
+        controller: _controller,
+        decoration: InputDecoration(border: InputBorder.none),
       ),
     );
   }

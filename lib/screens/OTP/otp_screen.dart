@@ -1,12 +1,19 @@
-// ignore_for_file: must_be_immutable, unnecessary_brace_in_string_interps
+// ignore_for_file: must_be_immutable, unnecessary_brace_in_string_interps, prefer_final_fields
 
 import 'package:flutter/material.dart';
-import 'package:whatsapp_clone/widgets/otp_code_boxes.dart';
 import 'package:whatsapp_clone/widgets/ui_helper.dart';
 
 class OtpScreen extends StatelessWidget {
   String phoneNumber;
   OtpScreen({super.key, required this.phoneNumber});
+
+  // Controllers for OTP
+  TextEditingController _otpController1 = TextEditingController();
+  TextEditingController _otpController2 = TextEditingController();
+  TextEditingController _otpController3 = TextEditingController();
+  TextEditingController _otpController4 = TextEditingController();
+  TextEditingController _otpController5 = TextEditingController();
+  TextEditingController _otpController6 = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -80,7 +87,17 @@ class OtpScreen extends StatelessWidget {
               SizedBox(height: 24),
 
               // OTP code with 6 TextFields
-              OtpCodeBoxes(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  UiHelper.CustomContainer(_otpController1),
+                  UiHelper.CustomContainer(_otpController2),
+                  UiHelper.CustomContainer(_otpController3),
+                  UiHelper.CustomContainer(_otpController4),
+                  UiHelper.CustomContainer(_otpController5),
+                  UiHelper.CustomContainer(_otpController6),
+                ],
+              ),
 
               SizedBox(height: 40),
 
