@@ -4,6 +4,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:whatsapp_clone/screens/home/home_screen.dart';
 import 'package:whatsapp_clone/widgets/ui_helper.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -197,6 +198,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       controller: name_controller,
                       cursorColor: Color(0xFF00A884),
                       autofocus: true,
+                      textCapitalization: TextCapitalization.words,
                       decoration: InputDecoration(
                         hintText: 'Type you\'re name here',
                         hintStyle: TextStyle(
@@ -223,7 +225,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
         ),
       ),
       floatingActionButton: UiHelper.CustomButton(
-        callBack: () {},
+        callBack: () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => HomeScreen()),
+          );
+        },
         buttonName: 'Next',
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
