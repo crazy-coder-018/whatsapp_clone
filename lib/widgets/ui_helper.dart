@@ -54,21 +54,32 @@ class UiHelper {
     );
   }
 
-  // Custom Container for OTP Sloda
-  static CustomContainer(TextEditingController _controller) {
-    return Container(
-      height: 40.0,
-      width: 40.0,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Colors.grey.shade300,
-      ),
+  // Custom OTP Box
+  static OtpBox(TextEditingController _textController) {
+    return SizedBox(
+      width: 40,
+      height: 40,
       child: Center(
         child: TextField(
-          controller: _controller,
+          controller: _textController,
           keyboardType: TextInputType.numberWithOptions(),
+          cursorColor: Color(0xFF00A884),
+          cursorHeight: 20,
+          textAlign: TextAlign.center,
+          textInputAction: TextInputAction.done,
           autofocus: true,
-          decoration: InputDecoration(border: InputBorder.none),
+          decoration: InputDecoration(
+            filled: true,
+            fillColor: Colors.grey.shade200,
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide.none,
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: BorderSide(color: Color(0xFF00A884)),
+            ),
+          ),
         ),
       ),
     );

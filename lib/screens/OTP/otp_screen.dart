@@ -93,12 +93,12 @@ class OtpScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    UiHelper.CustomContainer(_otpController1),
-                    UiHelper.CustomContainer(_otpController2),
-                    UiHelper.CustomContainer(_otpController3),
-                    UiHelper.CustomContainer(_otpController4),
-                    UiHelper.CustomContainer(_otpController5),
-                    UiHelper.CustomContainer(_otpController6),
+                    UiHelper.OtpBox(_otpController1),
+                    UiHelper.OtpBox(_otpController2),
+                    UiHelper.OtpBox(_otpController3),
+                    UiHelper.OtpBox(_otpController4),
+                    UiHelper.OtpBox(_otpController5),
+                    UiHelper.OtpBox(_otpController6),
                   ],
                 ),
               ),
