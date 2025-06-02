@@ -1,12 +1,20 @@
 // ignore_for_file: non_constant_identifier_names, must_be_immutable, sized_box_for_whitespace
 
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:whatsapp_clone/widgets/ui_helper.dart';
 
-class ProfileScreen extends StatelessWidget {
-  TextEditingController name_controller = TextEditingController();
-
+class ProfileScreen extends StatefulWidget {
   ProfileScreen({super.key});
+
+  @override
+  State<ProfileScreen> createState() => _ProfileScreenState();
+}
+
+class _ProfileScreenState extends State<ProfileScreen> {
+  TextEditingController name_controller = TextEditingController();
 
   _openBottom(BuildContext context) {
     return showModalBottomSheet(
@@ -25,10 +33,57 @@ class ProfileScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  // Icon
-                  Icon(Icons.camera_alt),
+                  // Icon (Camera)
+                  Column(
+                    children: [
+                      IconButton(
+                        onPressed: () {
+                          _pickImage(ImageSource.camera);
+                        },
+                        icon: Icon(
+                          Icons.camera_alt,
+                          size: 32,
+                          color: Color(0xFF00A884),
+                        ),
+                      ),
+
+                      SizedBox(height: 4),
+
+                      // Text
+                      UiHelper.CustomText(
+                        text: 'Camera',
+                        height: 16,
+                        fontFamily: 'Poppins-Semibold',
+                      ),
+                    ],
+                  ),
+
+                  Column(
+                    children: [
+                      // Icon (Image)
+                      IconButton(
+                        onPressed: () {
+                          _pickImage(ImageSource.gallery);
+                        },
+                        icon: Icon(
+                          Icons.image,
+                          size: 32,
+                          color: Color(0xFF00A884),
+                        ),
+                      ),
+
+                      SizedBox(height: 4),
+
+                      // Text
+                      UiHelper.CustomText(
+                        text: 'Gallery',
+                        height: 16,
+                        fontFamily: 'Poppins-Semibold',
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ],
@@ -36,6 +91,26 @@ class ProfileScreen extends StatelessWidget {
         );
       },
     );
+  }
+
+  File? pickedImage;
+
+  _pickImage(ImageSource imageSource) async {
+    try {
+      final photo = await ImagePicker().pickImage(source: imageSource);
+      if (photo == null) return;
+      final tempImage = File(photo.path);
+      setState(() {
+        pickedImage = tempImage;
+      });
+    } catch (ex) {
+      return ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(ex.toString()),
+          backgroundColor: Color(0xFF00A884),
+        ),
+      );
+    }
   }
 
   @override
