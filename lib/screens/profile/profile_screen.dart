@@ -12,7 +12,16 @@ class ProfileScreen extends StatelessWidget {
     return showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
-        return Container(height: 200, width: 200);
+        return Container(
+          height: 420,
+          width: 200,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20),
+              topRight: Radius.circular(20),
+            ),
+          ),
+        );
       },
     );
   }
