@@ -60,6 +60,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
 
+                  UiHelper.CustomText(
+                    text: 'OR',
+                    height: 16,
+                    fontFamily: 'Poppins-Bold',
+                    color: Color(0xFF00A884),
+                  ),
+
                   Column(
                     children: [
                       // Icon (Image)
@@ -160,15 +167,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 onTap: () {
                   _openBottom(context);
                 },
-                child: CircleAvatar(
-                  backgroundColor: Colors.grey.shade300,
-                  radius: 70.0,
-                  child: Icon(
-                    Icons.camera_alt_rounded,
-                    size: 46.0,
-                    color: Colors.grey.shade400,
-                  ),
-                ),
+                child:
+                    pickedImage == null
+                        ? CircleAvatar(
+                          backgroundColor: Colors.grey.shade300,
+                          radius: 70.0,
+                          child: Icon(
+                            Icons.camera_alt_rounded,
+                            size: 46.0,
+                            color: Colors.grey.shade400,
+                          ),
+                        )
+                        : CircleAvatar(
+                          radius: 70.0,
+                          backgroundImage: FileImage(pickedImage!),
+                        ),
               ),
 
               SizedBox(height: 16),
