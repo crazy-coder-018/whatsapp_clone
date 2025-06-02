@@ -1,11 +1,10 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:whatsapp_clone/contact/contact_screen.dart';
 import 'package:whatsapp_clone/widgets/ui_helper.dart';
 
-class ChatScreen extends StatelessWidget {
-  ChatScreen({super.key});
+class ContactScreen extends StatelessWidget {
+  ContactScreen({super.key});
 
   var contectList = [
     {
@@ -172,84 +171,163 @@ class ChatScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          SizedBox(height: 12),
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          toolbarHeight: 60,
+          elevation: 0,
+          title: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Select Contact
+              UiHelper.CustomText(
+                text: 'Select Contact',
+                height: 16,
+                fontFamily: 'Poppins-Medium',
+                color: Colors.white,
+              ),
 
-          // List of contacts chating
-          Expanded(
-            child: ListView.builder(
-              itemCount: contectList.length,
-              itemBuilder: (context, index) {
-                return InkWell(
-                  onTap: () {},
-                  child: ListTile(
-                    leading: CircleAvatar(
-                      radius: 24,
-                      backgroundImage: NetworkImage(
-                        contectList[index]["image"].toString(),
-                      ),
-                    ),
-                    title: UiHelper.CustomText(
-                      text: contectList[index]["name"].toString(),
-                      height: 14,
-                      fontFamily: 'Poppins-SemiBold',
-                      color: Colors.grey[900],
-                    ),
-                    subtitle: UiHelper.CustomText(
-                      text: contectList[index]["lastMessage"].toString(),
-                      height: 12,
-                      fontFamily: 'Poppins-Regular',
-                      color: Color(0xFF889095),
-                    ),
-                    trailing: Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
+              // Value Contact
+              UiHelper.CustomText(
+                text: '20 Contacts',
+                height: 12,
+                fontFamily: 'Poppins-Medium',
+                color: Colors.white,
+              ),
+            ],
+          ),
+
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: 16.0),
+              child: IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+            ),
+          ],
+        ),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 24.0,
+                left: 16.0,
+                right: 16.0,
+              ),
+              child: Column(
+                children: [
+                  // New Group
+                  InkWell(
+                    onTap: () {},
+                    child: Row(
                       children: [
-                        SizedBox(height: 4),
-                        // Time
-                        UiHelper.CustomText(
-                          text: contectList[index]["time"].toString(),
-                          height: 12,
-                          fontFamily: 'Poppins-Bold',
-                          color: Color(0xFF028100),
+                        // Icon
+                        CircleAvatar(
+                          backgroundColor: Color(0xFF00A884),
+                          radius: 22,
+                          child: Center(
+                            child: Icon(Icons.group_add, color: Colors.white),
+                          ),
                         ),
 
-                        SizedBox(height: 8),
+                        SizedBox(width: 12),
 
-                        // Messages
-                        CircleAvatar(
-                          radius: 10,
-                          child: UiHelper.CustomText(
-                            text: contectList[index]["messages"].toString(),
-                            height: 10,
-                            fontFamily: 'Poppins-Bold',
-                            color: Colors.white,
-                          ),
-                          backgroundColor: Color(0xFF028100),
+                        // Text
+                        UiHelper.CustomText(
+                          text: 'New Group',
+                          height: 16,
+                          fontFamily: 'Poppins-Semibold',
+                          color: Colors.black,
                         ),
                       ],
                     ),
                   ),
-                );
-              },
+
+                  SizedBox(height: 24),
+
+                  // New Contact
+                  InkWell(
+                    onTap: () {},
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            // Icon
+                            CircleAvatar(
+                              backgroundColor: Color(0xFF00A884),
+                              radius: 22,
+                              child: Center(
+                                child: Icon(
+                                  Icons.person_add,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+
+                            SizedBox(width: 12),
+
+                            // Text
+                            UiHelper.CustomText(
+                              text: 'New Contact',
+                              height: 16,
+                              fontFamily: 'Poppins-Semibold',
+                              color: Colors.black,
+                            ),
+                          ],
+                        ),
+                        Icon(Icons.qr_code),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
-          ),
-        ],
-      ),
-      floatingActionButton: CircleAvatar(
-        backgroundColor: Color(0xFF00A884),
-        radius: 34,
-        child: FloatingActionButton(
-          backgroundColor: Color(0xFF00A884),
-          elevation: 0,
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => ContactScreen()),
-            );
-          },
-          child: Center(child: Icon(Icons.message, color: Colors.white)),
+
+            SizedBox(height: 40),
+
+            Padding(
+              padding: EdgeInsets.only(left: 24),
+              child: UiHelper.CustomText(
+                text: 'Contacts on Whatsapp',
+                height: 14,
+                fontFamily: 'Poppins-Medium',
+              ),
+            ),
+
+            SizedBox(height: 6),
+
+            // Contact List
+            Expanded(
+              child: ListView.builder(
+                itemCount: contectList.length,
+                itemBuilder: (context, index) {
+                  return InkWell(
+                    onTap: () {},
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        radius: 24,
+                        backgroundImage: NetworkImage(
+                          contectList[index]["image"].toString(),
+                        ),
+                      ),
+                      title: UiHelper.CustomText(
+                        text: contectList[index]["name"].toString(),
+                        height: 14,
+                        fontFamily: 'Poppins-SemiBold',
+                        color: Colors.grey[900],
+                      ),
+                      subtitle: UiHelper.CustomText(
+                        text: contectList[index]["lastMessage"].toString(),
+                        height: 12,
+                        fontFamily: 'Poppins-Regular',
+                        color: Color(0xFF889095),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ],
         ),
       ),
     );
