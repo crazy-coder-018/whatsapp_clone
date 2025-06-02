@@ -5,7 +5,41 @@ class ChatScreen extends StatelessWidget {
   ChatScreen({super.key});
 
   List contectList = [
-    {"image": "", "title": "Hammad Butt", "subtitle": ""},
+    {
+      "image": "",
+      "name": "Hammad Butt",
+      "lastMessage": "Ok take care bro",
+      "time": "04:23 pm",
+      "messages": "6",
+    },
+    {
+      "image": "",
+      "name": "Mohammad Ali",
+      "lastMessage": "Loream Ipsum",
+      "time": "05:22 pm",
+      "messages": "8",
+    },
+    {
+      "image": "",
+      "name": "Atif Khwaja",
+      "lastMessage": "Loreum Ipsum",
+      "time": "03:00 pm",
+      "messages": "7",
+    },
+    {
+      "image": "",
+      "name": "Wahaj Ahmed",
+      "lastMessage": "Loream Ipsum",
+      "time": "04:23 am",
+      "messages": "10",
+    },
+    {
+      "image": "",
+      "name": "Kashif Khan",
+      "lastMessage": "Loream Ipsum",
+      "time": "10:23 am",
+      "messages": "1",
+    },
   ];
 
   @override
