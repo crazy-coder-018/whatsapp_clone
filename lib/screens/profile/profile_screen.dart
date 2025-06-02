@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names, must_be_immutable, sized_box_for_whitespace
+// ignore_for_file: non_constant_identifier_names, must_be_immutable, sized_box_for_whitespace, use_build_context_synchronously
 
 import 'dart:io';
 
@@ -7,7 +7,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:whatsapp_clone/widgets/ui_helper.dart';
 
 class ProfileScreen extends StatefulWidget {
-  ProfileScreen({super.key});
+  const ProfileScreen({super.key});
 
   @override
   State<ProfileScreen> createState() => _ProfileScreenState();
