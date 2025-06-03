@@ -1,7 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:whatsapp_clone/contact/contact_screen.dart';
+import 'package:whatsapp_clone/screens/contact/contact_screen.dart';
 import 'package:whatsapp_clone/widgets/ui_helper.dart';
 
 class ChatScreen extends StatelessWidget {
