@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:whatsapp_clone/screens/home/home_screen.dart';
+import 'package:whatsapp_clone/screens/splash/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Color(0xFFFFFFFF),
         useMaterial3: false,
       ),
-      home: HomeScreen(),
+      home: SplashScreen(),
     );
   }
 }
